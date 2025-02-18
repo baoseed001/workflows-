@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
         with:
@@ -31,11 +31,11 @@ jobs:
       - name: Archive Pytest allure test report
         uses: actions/upload-artifact@v4
         with:
-          name: Pytest-allure-report-${{ github.run_id }}
+          name: Pytest-allure-report
           path: allure-results
 
       - name: Upload Pytest allure report to GitHub
         uses: actions/upload-artifact@v4
         with:
-          name: Pytest-allure-report-${{ github.run_id }}
+          name: Pytest-allure-report
           path: allure-results
